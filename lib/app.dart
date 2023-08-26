@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:quotes_app/core/utils/app_strings.dart';
+
+import 'config/themes/app_theme.dart';
+import 'features/random_quote/presentation/screen/quote_screen.dart';
 
 class QuoteApp extends StatelessWidget {
   const QuoteApp({super.key});
@@ -8,11 +12,9 @@ class QuoteApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Quote App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      title: AppStrings.appName,
+      theme: appTheme(),
+      home: const QuoteScreen(),
     );
   }
 }
