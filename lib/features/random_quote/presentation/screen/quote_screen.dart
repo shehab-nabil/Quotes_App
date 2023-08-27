@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quotes_app/core/utils/app_strings.dart';
+import 'package:quotes_app/core/utils/media_query_values.dart';
+
+import '../../../../config/routes/routes.dart';
 
 class QuoteScreen extends StatefulWidget {
   const QuoteScreen({super.key});
@@ -15,8 +18,13 @@ class _QuoteScreenState extends State<QuoteScreen> {
       appBar: AppBar(
         title: const Text(AppStrings.appName),
       ),
-      body: const Center(
-        child: Text('Quote', style: TextStyle(fontSize: 70)),
+      body: Center(
+        child: InkWell(
+            onTap: () => context.push(routeName: Routes.favoriteQuoteRoute),
+            child: Container(
+                color: Colors.greenAccent,
+                width: context.screenWidth,
+                child: const Text('Quote', style: TextStyle(fontSize: 70)))),
       ),
     );
   }
