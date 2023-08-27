@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quotes_app/core/utils/app_strings.dart';
-import 'package:quotes_app/core/utils/media_query_values.dart';
-
-import '../../../../config/routes/routes.dart';
+import 'package:quotes_app/features/random_quote/presentation/widgets/quote_container.dart';
+import 'package:quotes_app/features/random_quote/presentation/widgets/reload_quote.dart';
 
 class QuoteScreen extends StatefulWidget {
   const QuoteScreen({super.key});
@@ -12,20 +11,28 @@ class QuoteScreen extends StatefulWidget {
 }
 
 class _QuoteScreenState extends State<QuoteScreen> {
+  Widget _buildBodyContent() {
+    return const Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Center(
+          child: QuoteContainer(),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        ReloadQuote(),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(AppStrings.appName),
-      ),
-      body: Center(
-        child: InkWell(
-            onTap: () => context.push(routeName: Routes.favoriteQuoteRoute),
-            child: Container(
-                color: Colors.greenAccent,
-                width: context.screenWidth,
-                child: const Text('Quote', style: TextStyle(fontSize: 70)))),
-      ),
-    );
+        appBar: AppBar(
+          title: const Text(AppStrings.quotes),
+        ),
+        body: _buildBodyContent());
   }
 }

@@ -7,5 +7,17 @@ ThemeData appTheme() {
     primaryColor: AppColors.primaryColor,
     hintColor: AppColors.hintColor,
     fontFamily: AppStrings.fontFamily,
+    scaffoldBackgroundColor: Colors.white,
+    //AppBar
+    appBarTheme: const AppBarTheme(
+      centerTitle: true,
+      color: Colors.transparent,
+      elevation: 0,
+      titleTextStyle: TextStyle(
+          color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
+    ),
+    //Icon Button
+    // iconButtonTheme: const IconButtonThemeData(
+    //     style: ButtonStyle(iconColor: MaterialState(Colors.black))),
   );
 }
