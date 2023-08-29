@@ -7,7 +7,7 @@ import 'package:quotes_app/features/random_quote/data/datasources/random_quote_r
 import 'package:quotes_app/features/random_quote/domain/entities/quote.dart';
 import 'package:quotes_app/features/random_quote/domain/repositories/quote_repository.dart';
 
-class QuoteRepositoryImpl extends QuoteRepository {
+class QuoteRepositoryImpl implements QuoteRepository {
   final NetworkInfo networkInfo;
   final RandomQuoteRemoteDataSource randomQuoteRemoteDataSource;
   final RandomQuoteLocalDataSource randomQuoteLocalDataSource;

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:quotes_app/features/random_quote/domain/entities/quote.dart';
 
 import '../../../../core/utils/app_colors.dart';
 
 class QuoteContainer extends StatelessWidget {
-  const QuoteContainer({super.key});
+  final Quote quote;
+  const QuoteContainer({super.key, required this.quote});
 
   @override
   Widget build(BuildContext context) {
@@ -13,21 +15,21 @@ class QuoteContainer extends StatelessWidget {
       decoration: BoxDecoration(
           color: AppColors.primaryColor,
           borderRadius: const BorderRadius.all(Radius.circular(30))),
-      child: const Column(
+      child: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Imagination is the living power and prime agent of all human perception',
+            quote.content,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 23, height: 1.4, fontWeight: FontWeight.w600),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text(
-            'shehab nabil ',
-            style: TextStyle(fontSize: 21, fontWeight: FontWeight.w600),
+            quote.author,
+            style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w600),
           ),
         ],
       ),

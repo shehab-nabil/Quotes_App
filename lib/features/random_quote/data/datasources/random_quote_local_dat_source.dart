@@ -10,7 +10,7 @@ abstract class RandomQuoteLocalDataSource {
   Future<void> cashQuote(QuoteModel quote);
 }
 
-class RandomQuoteLocalDataSourceImpl extends RandomQuoteLocalDataSource {
+class RandomQuoteLocalDataSourceImpl implements RandomQuoteLocalDataSource {
   final SharedPreferences sharedPreferences;
 
   RandomQuoteLocalDataSourceImpl({required this.sharedPreferences});
