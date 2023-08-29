@@ -4,7 +4,8 @@ import 'package:quotes_app/core/utils/media_query_values.dart';
 
 class ErrorWidget extends StatelessWidget {
   final VoidCallback? onPress;
-  const ErrorWidget({Key? key, this.onPress}) : super(key: key);
+  const ErrorWidget(Null Function() param0, {Key? key, this.onPress})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

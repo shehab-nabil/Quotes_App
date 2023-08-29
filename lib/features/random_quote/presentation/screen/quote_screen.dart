@@ -5,6 +5,7 @@ import 'package:quotes_app/core/utils/app_colors.dart';
 import 'package:quotes_app/core/utils/app_strings.dart';
 import 'package:quotes_app/features/random_quote/presentation/cubit/random_quote_cubit.dart';
 import 'package:quotes_app/features/random_quote/presentation/widgets/quote_container.dart';
+import 'package:quotes_app/core/widgets/error_widget.dart' as error_widget;
 
 class QuoteScreen extends StatefulWidget {
   const QuoteScreen({super.key});
@@ -57,8 +58,14 @@ class _QuoteScreenState extends State<QuoteScreen> {
               ),
             ],
           );
+        } else if (state is RandomQuoteError) {
+          return error_widget.ErrorWidget(() => _getRandomQuote());
         } else {
-          return ErrorWidget(() {});
+          return Center(
+            child: SpinKitFadingCircle(
+              color: AppColors.primaryColor,
+            ),
+          );
         }
       },
     );

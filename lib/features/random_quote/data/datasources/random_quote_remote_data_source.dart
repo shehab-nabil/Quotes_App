@@ -1,8 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
-
-import 'package:http/http.dart' as http;
-import 'package:quotes_app/core/error/exceptions.dart';
+import 'package:quotes_app/core/api/api_consumer.dart';
 import 'package:quotes_app/core/utils/api.dart';
 
 import 'package:quotes_app/features/random_quote/data/models/quote_model.dart';
@@ -12,19 +8,13 @@ abstract class RandomQuoteRemoteDataSource {
 }
 
 class RandomQuoteRemoteDataSourceImpl extends RandomQuoteRemoteDataSource {
-  http.Client client;
+  ApiConsumer apiConsumer;
   RandomQuoteRemoteDataSourceImpl({
-    required this.client,
+    required this.apiConsumer,
   });
   @override
   Future<QuoteModel> getRandomQuote() async {
-    final respose = await client.get(
-      Uri.parse(Api.baseUrl),
-    );
-    if (respose.statusCode == 200) {
-      return QuoteModel.formJson(json.decode(respose.body));
-    } else {
-      throw ServerException();
-    }
+    final respose = await apiConsumer.get(Api.baseUrl);
+    return QuoteModel.formJson(respose);
   }
 }

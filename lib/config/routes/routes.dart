@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quotes_app/features/random_quote/presentation/cubit/random_quote_cubit.dart';
 import 'package:quotes_app/features/random_quote/presentation/screen/quote_screen.dart';
 
-import '../../features/favorite_quotes/presentation/screens/favorite_screen.dart';
 import '../../injection_container.dart';
 
 class Routes {
@@ -20,9 +19,7 @@ class AppRoutes {
                   create: (context) => sl<RandomQuoteCubit>(),
                   child: const QuoteScreen(),
                 ));
-      case Routes.favoriteQuoteRoute:
-        return MaterialPageRoute(
-            builder: (context) => const FavoriteQuoteScreen());
+
       default:
         return undefindRoute();
     }

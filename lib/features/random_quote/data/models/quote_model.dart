@@ -8,7 +8,7 @@ class QuoteModel extends Quote {
       id: json['_id'], content: json['content'], author: json['author']);
   Map<String, dynamic> toJson() => {
         "author": author,
-        "id": id,
+        "_id": id,
         "quote": content,
       };
 }
