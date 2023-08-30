@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:quotes_app/core/utils/app_colors.dart';
 import 'package:quotes_app/core/utils/media_query_values.dart';
 
+import '../../config/locale/app_localizations.dart';
+
 class ErrorWidget extends StatelessWidget {
   final VoidCallback? onPress;
   const ErrorWidget(Null Function() param0, {Key? key, this.onPress})
@@ -22,16 +24,14 @@ class ErrorWidget extends StatelessWidget {
         ),
         Container(
           margin: const EdgeInsets.symmetric(vertical: 12),
-          child: const Text(
-            //AppLocalizations.of(context)!.translate('something_went_wrong')!,
-            '',
-            style: TextStyle(
+          child: Text(
+            AppLocalizations.of(context)!.translate('something_went_wrong')!,
+            style: const TextStyle(
                 color: Colors.black, fontSize: 20, fontWeight: FontWeight.w700),
           ),
         ),
         Text(
-          // AppLocalizations.of(context)!.translate('try_again')!,
-          '',
+          AppLocalizations.of(context)!.translate('try_again')!,
           style: TextStyle(
               color: AppColors.hintColor,
               fontSize: 18,
@@ -44,15 +44,14 @@ class ErrorWidget extends StatelessWidget {
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 foregroundColor: Theme.of(context).primaryColor,
-                backgroundColor: AppColors.primaryColor,
+                backgroundColor: AppColors.hintColor,
                 elevation: 500,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50))),
-            child: const Text(
-              // AppLocalizations.of(context)!.translate('reload_screen')!,
-              '',
-              style: TextStyle(
-                  color: Colors.white,
+            child: Text(
+              AppLocalizations.of(context)!.translate('reload_screen')!,
+              style: const TextStyle(
+                  color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.w700),
             ),
