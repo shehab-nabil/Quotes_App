@@ -1,16 +1,68 @@
-# quotes_app
+  # Quotes_App
 
-A new Flutter project.
 
-## Getting Started
+<br />
 
-This project is a starting point for a Flutter application.
+![flutter](https://img.shields.io/badge/Flutter-Framework-green?logo=flutter)
+![Dart](https://img.shields.io/badge/Dart-Language-blue?logo=dart)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<h3 align="center">Quotes App</h3>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  <p align="center">
+    QuoteApp: inspiring quote sourced from an API, offering famous quotes . With localization support and a captivating splash screen.
+    <br />
+    <a href="https://github.com/shehab-nabil/Movies_App"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+  </p>
+</div>
+
+
+- [🖥] # Screens 🖥
+- [🆗] Splash screen
+- [🆗] Home screen
+- [🆗] Error screen
+
+--------------------------------
+- [🖥] # Deal With 🖥
+- [x] api 
+- [x] Deal With Bloc State Management
+- [x] Deal With Design Pattern
+- [x] Deal With localization 
+- [x] Deal With clean architecture 
+- [x] service locator(Dependency injection)
+------------------------------
+
+
+
+## Snapshots
+
+
+| Splash Screen| 
+|---------------------------------------------|
+|---------------------------------------------|
+|<img src="assets\images\splash_screen.png" width="400">
+
+
+| Home Screen| 
+|---------------------------------------------|
+|---------------------------------------------|
+|<img src="assets\images\home.png" width="400">
+
+
+
+| Error Screen in english| 
+|---------------------------------------------|
+|---------------------------------------------|
+|<img src="assets\images\error_screen_en.png" width="400">
+
+| Error Screen in arabic| 
+|---------------------------------------------|
+|---------------------------------------------|
+| <img src="assets\images\error_screen_ar.png" width="400"> 
+
+
+
+
+
